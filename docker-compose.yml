@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  postgre_local:
+    image: "postgres:12.2-alpine"
+    ports:
+      - 54320:5432
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: auction_service
+    volumes:
+      - auction_servicedata:/var/lib/postgres/auction_service_data
+volumes:
+  auction_servicedata:
+
